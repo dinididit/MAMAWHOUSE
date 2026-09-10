@@ -317,3 +317,27 @@ body {
     padding-bottom: 24px;
   }
 }
+
+
+/* Hard mobile image containment: absolute fill plus identical background fallback. */
+@media (max-width: 760px) {
+  .mobile-house-photo {
+    background-color: #d9e5e1;
+    background-image: url('assets/mamaws-house-hero.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 70%;
+  }
+  .mobile-house-photo > img {
+    position: absolute !important;
+    inset: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
+    max-width: none !important;
+    object-fit: cover !important;
+    object-position: center 70% !important;
+  }
+}
