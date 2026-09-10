@@ -20,7 +20,7 @@ button, a.button { font: inherit; }
 .wrap { width: min(var(--max), calc(100% - 36px)); margin-inline: auto; }
 .skip-link { position: fixed; left: 12px; top: -60px; background: white; color: black; padding: 10px 14px; z-index: 999; }
 .skip-link:focus { top: 12px; }
-.hero { min-height: 760px; color: white; background-image: linear-gradient(90deg, rgba(8,24,18,.86) 0%, rgba(8,24,18,.70) 42%, rgba(8,24,18,.25) 72%, rgba(8,24,18,.10) 100%), linear-gradient(180deg, rgba(8,24,18,.08) 0%, rgba(8,24,18,.20) 100%), url('assets/mamaws-house-hero.png'); background-size: cover; background-position: center center; position: relative; overflow: hidden; }
+.hero { min-height: 760px; color: white; background-image: linear-gradient(90deg, rgba(8,24,18,.86) 0%, rgba(8,24,18,.70) 42%, rgba(8,24,18,.25) 72%, rgba(8,24,18,.10) 100%), linear-gradient(180deg, rgba(8,24,18,.08) 0%, rgba(8,24,18,.20) 100%), url('assets/mamaws-house-hero-v2.png'); background-size: cover; background-position: center center; position: relative; overflow: hidden; }
 .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.20)); pointer-events: none; }
 .nav { height: 92px; display: flex; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid rgba(255,255,255,.14); position: relative; z-index: 2; }
 .brand { text-decoration: none; font-family: Georgia, "Times New Roman", serif; font-size: 1.45rem; font-weight: 700; }
@@ -110,7 +110,7 @@ h2 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.2rem, 5v
   .nav { height: 72px; }
   .brand { font-size: 1.24rem; }
   .nav-donate { font-size: .84rem; }
-  .hero { min-height: auto; background-position: 60% center; background-image: linear-gradient(180deg, rgba(8,24,18,.78) 0%, rgba(8,24,18,.65) 52%, rgba(8,24,18,.48) 100%), url('assets/mamaws-house-hero.png'); }
+  .hero { min-height: auto; background-position: 60% center; background-image: linear-gradient(180deg, rgba(8,24,18,.78) 0%, rgba(8,24,18,.65) 52%, rgba(8,24,18,.48) 100%), url('assets/mamaws-house-hero-v2.png'); }
   .hero-inner { padding: 64px 0 76px; }
   .hero .eyebrow { max-width: 320px; }
   h1 { font-size: clamp(3rem, 16vw, 4.8rem); line-height: 1.02; }
@@ -241,7 +241,7 @@ body {
 .final-cta {
   background:
     linear-gradient(90deg, rgba(10,30,24,.96), rgba(10,30,24,.80)),
-    url('assets/mamaws-house-hero.png');
+    url('assets/mamaws-house-hero-v2.png');
   background-size: cover;
   background-position: center 58%;
 }
@@ -262,7 +262,7 @@ body {
     min-height: 760px;
     background-image:
       linear-gradient(180deg, rgba(8,24,18,.18) 0%, rgba(8,24,18,.36) 38%, rgba(8,24,18,.70) 100%),
-      url('assets/mamaws-house-hero.png');
+      url('assets/mamaws-house-hero-v2.png');
     background-position: center center;
   }
   .hero::after {
@@ -323,7 +323,7 @@ body {
 @media (max-width: 760px) {
   .mobile-house-photo {
     background-color: #d9e5e1;
-    background-image: url('assets/mamaws-house-hero.png');
+    background-image: url('assets/mamaws-house-hero-v2.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center 70%;
@@ -339,5 +339,31 @@ body {
     max-width: none !important;
     object-fit: cover !important;
     object-position: center 70% !important;
+  }
+}
+
+
+/* Final mobile image rule: render the complete photograph at its natural ratio. */
+@media (max-width: 760px) {
+  .mobile-house-photo {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    background: none !important;
+    border-bottom: 3px solid #efc98d;
+  }
+  .mobile-house-photo > img {
+    position: static !important;
+    inset: auto !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
   }
 }
