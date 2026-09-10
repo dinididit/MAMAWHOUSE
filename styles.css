@@ -281,3 +281,39 @@ body {
     text-shadow: 0 2px 12px rgba(0,0,0,.70);
   }
 }
+
+
+/* Mobile composition repair: the house is a real image panel, never a background crop. */
+.mobile-house-photo { display: none; }
+@media (max-width: 760px) {
+  .hero {
+    min-height: auto;
+    background: linear-gradient(180deg, #314b42 0%, #18352c 100%);
+  }
+  .mobile-house-photo {
+    display: block;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 270px;
+    margin: 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(255,255,255,.18);
+    border-bottom: 3px solid #efc98d;
+    background: #d9e5e1;
+  }
+  .mobile-house-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 70%;
+  }
+  .hero-inner {
+    padding-top: 42px;
+    padding-bottom: 132px;
+  }
+  .hero-actions {
+    padding-bottom: 24px;
+  }
+}
