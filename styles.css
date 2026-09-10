@@ -1,0 +1,256 @@
+:root {
+  --ink: #18241f;
+  --forest: #18352c;
+  --forest-2: #21483b;
+  --cream: #f5f0e5;
+  --paper: #fffdf8;
+  --warm: #c88c42;
+  --warm-dark: #8e5c24;
+  --muted: #647068;
+  --line: #ded8cc;
+  --max: 1120px;
+  --radius: 22px;
+  --shadow: 0 18px 60px rgba(24, 36, 31, .12);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--ink); background: var(--paper); line-height: 1.6; }
+a { color: inherit; }
+button, a.button { font: inherit; }
+.wrap { width: min(var(--max), calc(100% - 36px)); margin-inline: auto; }
+.skip-link { position: fixed; left: 12px; top: -60px; background: white; color: black; padding: 10px 14px; z-index: 999; }
+.skip-link:focus { top: 12px; }
+.hero { min-height: 760px; color: white; background-image: linear-gradient(90deg, rgba(8,24,18,.86) 0%, rgba(8,24,18,.70) 42%, rgba(8,24,18,.25) 72%, rgba(8,24,18,.10) 100%), linear-gradient(180deg, rgba(8,24,18,.08) 0%, rgba(8,24,18,.20) 100%), url('assets/mamaws-house-hero.jpg'); background-size: cover; background-position: center center; position: relative; overflow: hidden; }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.20)); pointer-events: none; }
+.nav { height: 92px; display: flex; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid rgba(255,255,255,.14); position: relative; z-index: 2; }
+.brand { text-decoration: none; font-family: Georgia, "Times New Roman", serif; font-size: 1.45rem; font-weight: 700; }
+.nav-donate { color: white; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.7); font-weight: 700; }
+.hero-inner { padding: 96px 0 120px; position: relative; z-index: 2; max-width: 1180px; }
+.eyebrow, .section-kicker { text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; font-weight: 800; color: var(--warm-dark); }
+.hero .eyebrow, .section-kicker.light { color: #efc98d; }
+h1, h2, h3 { line-height: 1.08; margin-top: 0; }
+h1 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(3.6rem, 9vw, 7rem); max-width: 900px; margin: 18px 0 26px; letter-spacing: -.045em; }
+h1 span { color: #efc98d; }
+h2 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.2rem, 5vw, 4rem); letter-spacing: -.03em; }
+.hero-copy { max-width: 690px; font-size: 1.3rem; color: rgba(255,255,255,.94); text-shadow: 0 2px 18px rgba(0,0,0,.32); }
+.hero-actions, .share-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
+.button { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 13px 19px; border-radius: 999px; border: 1px solid transparent; text-decoration: none; cursor: pointer; transition: transform .15s ease, background .15s ease; font-weight: 760; }
+.button:hover { transform: translateY(-1px); }
+.button:focus-visible, .mobile-cta a:focus-visible, .mobile-cta button:focus-visible { outline: 3px solid #efc98d; outline-offset: 3px; }
+.primary { background: #efc98d; color: #16231e; font-weight: 850; }
+.secondary { background: rgba(8,24,18,.20); border-color: rgba(255,255,255,.55); color: white; }
+.money-note { font-size: .9rem; color: rgba(255,255,255,.72); margin-top: 22px; }
+.goal-section, .story-section, .journal-section, .trust-section { padding: 90px 0; }
+.goal-card { display: flex; gap: 40px; align-items: end; justify-content: space-between; padding: 40px; background: var(--cream); border-radius: var(--radius); box-shadow: var(--shadow); }
+.goal-card h2 { margin-bottom: 10px; }
+.goal-card p { max-width: 710px; color: var(--muted); }
+.goal-card .formula { margin: 10px 0 12px; color: var(--forest); font-size: clamp(1.2rem, 2.6vw, 1.65rem); font-family: Georgia, "Times New Roman", serif; font-weight: 800; line-height: 1.25; }
+.goal-card #progress-note { margin-bottom: 0; }
+.text-link { white-space: nowrap; font-weight: 800; color: var(--forest); }
+.story-section { display: grid; grid-template-columns: .86fr 1.14fr; gap: 64px; align-items: center; }
+.family-story { align-items: start; }
+.story-note { margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--line); font-size: .92rem !important; color: var(--muted) !important; }
+.story-pull { margin: 28px 0; padding-left: 20px; border-left: 4px solid var(--warm); color: var(--forest) !important; font-family: Georgia, "Times New Roman", serif; font-weight: 800; font-size: 1.45rem !important; line-height: 1.35; }
+.family-gallery { display: grid; gap: 16px; }
+.family-photo { margin: 0; background: white; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); }
+.family-photo img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--cream); }
+.family-photo-feature img { aspect-ratio: 16 / 10; object-position: center 42%; }
+.family-photo figcaption { padding: 13px 15px 15px; color: var(--muted); font-size: .88rem; line-height: 1.45; }
+.family-photo-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.story-copy p { font-size: 1.08rem; color: #4b574f; }
+.recognition-section { padding: 96px 0 104px; background: linear-gradient(180deg, #f7f0e4 0%, #fffdf8 100%); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.recognition-inner { max-width: 1040px; }
+.recognition-inner > h2 { max-width: 900px; margin-bottom: 18px; }
+.recognition-lead { max-width: 760px; color: var(--muted); font-size: 1.18rem; }
+.recognition-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 38px 0 34px; }
+.recognition-grid article { padding: 28px; background: rgba(255,255,255,.78); border: 1px solid rgba(58,75,65,.14); border-radius: 18px; box-shadow: 0 10px 30px rgba(29,47,38,.06); }
+.recognition-grid span { display: block; margin-bottom: 14px; color: var(--warm-dark); font-family: Georgia, "Times New Roman", serif; font-size: 1.7rem; font-weight: 800; }
+.recognition-grid h3 { margin-bottom: 10px; font-size: 1.2rem; }
+.recognition-grid p { margin: 0; color: var(--muted); }
+.recognition-pull { max-width: 860px; margin: 0 0 24px; color: var(--forest); font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.3rem, 2.4vw, 1.8rem); line-height: 1.35; font-weight: 800; }
+.recognition-share { background: var(--forest); color: white; }
+.challenge-section { background: var(--forest); color: white; padding: 100px 0; }
+.challenge-lead { color: rgba(255,255,255,.80); font-size: 1.2rem; max-width: 760px; }
+.challenge-formula { display: inline-block; margin-top: 8px; padding: 10px 16px; border-left: 3px solid #efc98d; color: #efc98d; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.15rem, 2.6vw, 1.55rem); font-weight: 800; }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 42px; }
+.steps article { padding: 28px; border: 1px solid rgba(255,255,255,.16); border-radius: 18px; background: rgba(255,255,255,.05); }
+.steps strong { font-family: Georgia, serif; font-size: 3.4rem; color: #efc98d; }
+.steps h3 { margin: 6px 0 8px; font-size: 1.3rem; }
+.steps p { color: rgba(255,255,255,.74); margin: 0; }
+.share-card { margin-top: 44px; display: grid; grid-template-columns: 1.15fr .85fr; gap: 26px; padding: 30px; border-radius: 22px; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.065); }
+.share-card h3 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.7rem, 3vw, 2.45rem); margin-bottom: 14px; }
+.share-card-copy .share-intro { color: rgba(255,255,255,.78); margin-bottom: 16px; }
+.share-card blockquote { margin: 0; padding: 18px 20px; border-left: 3px solid #efc98d; background: rgba(0,0,0,.10); color: rgba(255,255,255,.94); font-family: Georgia, "Times New Roman", serif; font-size: 1.05rem; line-height: 1.55; }
+.share-actions { display: grid; gap: 10px; align-content: center; }
+.light-button { background: #efc98d; color: #16231e; font-weight: 850; }
+.outline-light { background: transparent; border-color: rgba(255,255,255,.38); color: white; }
+.share-status { min-height: 1.5em; color: #efc98d; font-weight: 700; }
+.journal-section { max-width: 900px; }
+.journal-card { display: grid; grid-template-columns: 22px 1fr; gap: 22px; margin-top: 32px; padding: 30px; border: 1px solid var(--line); border-radius: 18px; background: white; }
+.journal-marker { width: 14px; height: 14px; border-radius: 50%; background: var(--warm); margin-top: 5px; box-shadow: 0 0 0 6px rgba(200,140,66,.15); }
+.journal-date { color: var(--warm-dark); font-weight: 800; font-size: .76rem; letter-spacing: .1em; }
+.journal-card h3 { margin-bottom: 8px; }
+.journal-card p:last-child { color: var(--muted); }
+.trust-section { border-top: 1px solid var(--line); }
+.trust-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 34px; }
+.trust-grid > div { padding: 24px; background: var(--cream); border-radius: 16px; }
+.trust-grid h3 { margin-bottom: 8px; }
+.trust-grid p { margin: 0; color: var(--muted); }
+.final-cta { background: #10261f; color: white; padding: 76px 0; }
+.final-inner { display: flex; align-items: center; justify-content: space-between; gap: 36px; }
+.final-inner h2 { max-width: 780px; margin-bottom: 12px; }
+.final-inner p:not(.section-kicker) { color: rgba(255,255,255,.74); margin-bottom: 0; }
+.final-actions { display: grid; gap: 10px; min-width: 205px; }
+.footer { min-height: 120px; display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--muted); font-size: .9rem; }
+.mobile-cta { display: none; }
+
+@media (max-width: 760px) {
+  body { padding-bottom: 72px; }
+  .wrap { width: min(var(--max), calc(100% - 28px)); }
+  .nav { height: 72px; }
+  .brand { font-size: 1.24rem; }
+  .nav-donate { font-size: .84rem; }
+  .hero { min-height: auto; background-position: 60% center; background-image: linear-gradient(180deg, rgba(8,24,18,.78) 0%, rgba(8,24,18,.65) 52%, rgba(8,24,18,.48) 100%), url('assets/mamaws-house-hero.jpg'); }
+  .hero-inner { padding: 64px 0 76px; }
+  .hero .eyebrow { max-width: 320px; }
+  h1 { font-size: clamp(3rem, 16vw, 4.8rem); line-height: 1.02; }
+  .hero-copy { font-size: 1.12rem; }
+  .hero-actions .button { width: 100%; }
+  .goal-card, .final-inner { align-items: stretch; flex-direction: column; }
+  .goal-card { padding: 28px 24px; }
+  .text-link { white-space: normal; }
+  .story-section { grid-template-columns: 1fr; gap: 38px; }
+  .family-photo-pair { grid-template-columns: 1fr; }
+  .steps, .trust-grid, .share-card, .recognition-grid { grid-template-columns: 1fr; }
+  .share-card { padding: 24px; }
+  .share-actions .button { width: 100%; }
+  .goal-section, .story-section, .journal-section, .trust-section, .recognition-section { padding: 64px 0; }
+  .challenge-section { padding: 72px 0; }
+  .final-cta { padding: 62px 0; }
+  .final-actions { min-width: 0; }
+  .footer { flex-direction: column; align-items: flex-start; justify-content: center; padding: 24px 0; }
+  .mobile-cta { position: fixed; z-index: 50; display: grid; grid-template-columns: 1fr 1fr; left: 10px; right: 10px; bottom: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,.15); border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,.25); background: #10261f; }
+  .mobile-cta a, .mobile-cta button { min-height: 54px; border: 0; font: inherit; font-weight: 850; text-decoration: none; display: grid; place-items: center; cursor: pointer; }
+  .mobile-cta-donate { background: #efc98d; color: #16231e; }
+  .mobile-cta button { background: #10261f; color: white; border-left: 1px solid rgba(255,255,255,.16); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .button { transition: none; }
+}
+
+/* 2026-09-10 serious rework: keep the page visually rooted in the house and Hayes family archive. */
+body {
+  background:
+    radial-gradient(circle at 12% 12%, rgba(200,140,66,.08), transparent 28rem),
+    linear-gradient(180deg, #fffdf8 0%, #f7f1e6 100%);
+}
+.hero {
+  min-height: 820px;
+  background-position: center 48%;
+  box-shadow: inset 0 -1px 0 rgba(255,255,255,.16);
+}
+.hero-inner { padding-top: 112px; }
+.hero-copy { font-size: clamp(1.15rem, 2vw, 1.38rem); max-width: 760px; }
+.manifest-line {
+  display: inline-block;
+  margin: 24px 0 0;
+  padding: 8px 0 8px 14px;
+  border-left: 3px solid #efc98d;
+  color: #f5ddb5;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+.goal-section { padding-top: 72px; padding-bottom: 72px; }
+.goal-card {
+  border: 1px solid rgba(142,92,36,.13);
+  background: linear-gradient(135deg, #fff9ef 0%, #f0e4d0 100%);
+  box-shadow: 0 24px 70px rgba(45,50,42,.12);
+}
+.family-story {
+  position: relative;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding: 56px;
+  border-radius: 30px;
+  background: linear-gradient(145deg, rgba(255,253,248,.98), rgba(239,225,203,.92));
+  box-shadow: 0 24px 80px rgba(24,53,44,.14);
+  border: 1px solid rgba(142,92,36,.12);
+  overflow: hidden;
+}
+.family-story::before {
+  content: "HAYES FAMILY ARCHIVE";
+  position: absolute;
+  right: -12px;
+  top: 16px;
+  font-size: clamp(2rem, 6vw, 5rem);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 800;
+  letter-spacing: -.04em;
+  color: rgba(24,53,44,.035);
+  pointer-events: none;
+}
+.southern-line {
+  margin: 28px 0;
+  padding: 18px 20px;
+  border-radius: 16px;
+  background: rgba(24,53,44,.07);
+  color: var(--forest) !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.18rem !important;
+  line-height: 1.45;
+}
+.family-photo { border: 7px solid #fffdf8; box-shadow: 0 18px 38px rgba(24,36,31,.17); }
+.family-photo-feature { transform: rotate(.35deg); }
+.family-photo-pair .family-photo:first-child { transform: rotate(-.75deg); }
+.family-photo-pair .family-photo:last-child { transform: rotate(.85deg); }
+.family-photo figcaption { background: #fffdf8; color: #425148; font-weight: 650; }
+.recognition-section {
+  background:
+    linear-gradient(90deg, rgba(24,53,44,.96), rgba(24,53,44,.88)),
+    url('assets/family-gathering-archive-03.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  border: 0;
+}
+.recognition-section .section-kicker { color: #efc98d; }
+.recognition-section h2 { max-width: 860px; }
+.recognition-lead { color: rgba(255,255,255,.82); }
+.recognition-grid article {
+  background: rgba(255,255,255,.075);
+  border-color: rgba(255,255,255,.16);
+  box-shadow: none;
+  backdrop-filter: blur(5px);
+}
+.recognition-grid span { color: #efc98d; }
+.recognition-grid h3 { color: white; }
+.recognition-grid p { color: rgba(255,255,255,.76); }
+.recognition-pull { color: white; }
+.recognition-share { background: #efc98d; color: #16231e; }
+.challenge-section {
+  background:
+    radial-gradient(circle at 84% 8%, rgba(239,201,141,.13), transparent 26rem),
+    linear-gradient(180deg, #18352c 0%, #10261f 100%);
+}
+.steps article, .share-card { backdrop-filter: blur(4px); }
+.journal-section { max-width: 980px; }
+.journal-card { border-left: 6px solid var(--warm); box-shadow: 0 14px 46px rgba(24,36,31,.08); }
+.trust-section { background: rgba(255,253,248,.72); }
+.final-cta {
+  background:
+    linear-gradient(90deg, rgba(10,30,24,.96), rgba(10,30,24,.80)),
+    url('assets/mamaws-house-hero.jpg');
+  background-size: cover;
+  background-position: center 58%;
+}
+@media (max-width: 760px) {
+  .hero { min-height: 720px; background-position: 63% center; }
+  .hero-inner { padding-top: 78px; }
+  .manifest-line { font-size: .95rem; }
+  .family-story { padding: 32px 22px; margin-top: 12px; margin-bottom: 12px; border-radius: 22px; }
+  .family-story::before { font-size: 2.25rem; top: 10px; right: 8px; }
+  .family-photo-feature, .family-photo-pair .family-photo:first-child, .family-photo-pair .family-photo:last-child { transform: none; }
+  .recognition-section { background-position: 56% center; }
+}
