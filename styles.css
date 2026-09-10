@@ -283,87 +283,37 @@ body {
 }
 
 
-/* Mobile composition repair: the house is a real image panel, never a background crop. */
+/* Mobile house photograph: standard JPEG, fixed ratio, no crop or overlay. */
 .mobile-house-photo { display: none; }
 @media (max-width: 760px) {
   .hero {
     min-height: auto;
-    background: linear-gradient(180deg, #314b42 0%, #18352c 100%);
+    background: linear-gradient(180deg, #27483d 0%, #18352c 100%);
   }
+  .hero::after { display: none; }
   .mobile-house-photo {
     display: block;
     position: relative;
-    z-index: 2;
+    z-index: 3;
     width: 100%;
-    height: 270px;
+    aspect-ratio: 4 / 3;
     margin: 0;
     overflow: hidden;
-    border-top: 1px solid rgba(255,255,255,.18);
     border-bottom: 3px solid #efc98d;
     background: #d9e5e1;
   }
   .mobile-house-photo img {
+    position: absolute;
+    inset: 0;
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center 70%;
+    object-fit: contain;
+    background: #d9e5e1;
   }
   .hero-inner {
     padding-top: 42px;
     padding-bottom: 132px;
   }
-  .hero-actions {
-    padding-bottom: 24px;
-  }
-}
-
-
-/* Hard mobile image containment: absolute fill plus identical background fallback. */
-@media (max-width: 760px) {
-  .mobile-house-photo {
-    background-color: #d9e5e1;
-    background-image: url('assets/mamaws-house-hero-v2.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center 70%;
-  }
-  .mobile-house-photo > img {
-    position: absolute !important;
-    inset: 0 !important;
-    display: block !important;
-    width: 100% !important;
-    height: 100% !important;
-    min-width: 100% !important;
-    min-height: 100% !important;
-    max-width: none !important;
-    object-fit: cover !important;
-    object-position: center 70% !important;
-  }
-}
-
-
-/* Final mobile image rule: render the complete photograph at its natural ratio. */
-@media (max-width: 760px) {
-  .mobile-house-photo {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-    margin: 0 !important;
-    overflow: visible !important;
-    background: none !important;
-    border-bottom: 3px solid #efc98d;
-  }
-  .mobile-house-photo > img {
-    position: static !important;
-    inset: auto !important;
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-    min-width: 0 !important;
-    min-height: 0 !important;
-    max-width: 100% !important;
-    object-fit: contain !important;
-    object-position: center !important;
-  }
+  .hero-actions { padding-bottom: 24px; }
 }
